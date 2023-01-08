@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="sms"></p>
+    <script>
+        var servant={
+            fname:'Kami',
+            lname:'nike',
+            designation:'chairman'
+
+        }
+        var x;
+        var text='';
+        for(x in servant){
+            text += ' '+servant[x];
+        }
+        document.getElementById('sms').innerText=text;
+    </script> -->
+    <p id="emp"></p>
+    <script>
+        class employee{
+            constructor(name,lname,desig){
+                this.name=name;
+                this.lname=lname;
+                this.desig=desig;
+
+            }
+            employeeCV =() =>{
+                console.log('Employee Name is:'+this.name+""+this.lname+'Employee Designation:'+this.desig);
+
+            }
+        }
+        var emp = new employee('Zaeem','Khan','Ceo');
+        emp.employeeCV();   
+        
+        </script>
+</body>
+</html>

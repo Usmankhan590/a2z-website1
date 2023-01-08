@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="cards.css"> -->
+    <link rel="stylesheet" href="cricket.css">
+    <link rel="stylesheet" href="sidemenu.css">
+    <link rel="stylesheet" href="footer.css">
+    <title> AZ SPORTS Baseball </title>
+    <link rel="icon" href="az white1.jpg">
+</head>
+<body>
+  <header class="head">
+    <a href="home.html" class='logo'><img class="azimg" src="az white1.jpg"></a>
+    <a href="home.html" class='logo'><img class="img1" src="676.jpg"></a>
+    <ul>
+        <li class="li"><a href="home.html">Home</a></li>
+        <li class="li"><a href="aboutus.html">About Us</a></li>
+        <li class="li"><a href="exclusive.html">Exclusive</a></li>
+            <!-- <li class="li"><input id="search" placeholder="Search"></li> -->
+          
+        </ul>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Join
+</button>
+
+<!-- Modal -->
+<script>
+  function sp(){
+
+var u1 = document.getElementById("n1").value;
+var u2 = document.getElementById("n2").value; 
+var e = document.getElementById("email").value; 
+var p = document.getElementById("password").value; 
+var ps = document.getElementById("ps").value;
+var c = document.getElementById("city").value;
+var ad = document.getElementById("ad").value;
+var r1 = /^[a-zA-Z]{3,15}$/;
+var r4 = /^[0-9]{6}$/;
+var r2 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*&^%$#@_]).{8,16}$/;
+var r3 = /^[a-zA-Z0-9]+@[a-z]{2,3}$/;
+var ut1 = r1.test(u1)
+var ut2 = r1.test(u2)
+var ct = r1.test(c)
+var adt = r1.test(ad)
+var pst = r4.test(ps)
+var pt = r2.test(e)
+var et = r3.test(p)
+
+if(ut1){
+document.getElementById("e1").innerHTML="";
+}else{
+document.getElementById("e1").innerHTML="invail first name"
+}
+if(ut2){
+document.getElementById("e2").innerHTML="";
+}else{
+document.getElementById("e2").innerHTML="invail first name"
+}
+if(et){
+document.getElementById("e3").innerHTML="";
+}else{
+document.getElementById("e3").innerHTML="invail email"
+}
+if(pt){
+document.getElementById("e4").innerHTML="";
+}else{
+document.getElementById("e4").innerHTML="invail password ex:Qa121212@"
+}
+if(adt){
+document.getElementById("e5").innerHTML="";
+}else{
+document.getElementById("e5").innerHTML="enter your full address"
+}
+if(ct){
+document.getElementById("e6").innerHTML="";
+}else{
+document.getElementById("e6").innerHTML="enter city name"
+}
+if(pst){
+document.getElementById("e7").innerHTML="";
+}else{
+document.getElementById("e7").innerHTML="enter your postal code"
+}
+  }
+</script>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Sign up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="n1" placeholder="First name"><span class="e" id="e1"></span>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="n2" placeholder="Last name"><span class="e" id="e2"></span>
+          </div>
+          <div class="col-12">
+          <input type="email" class="form-control" placeholder="Email" id="email"><span class="e" id="e3"></span>
+          </div>
+          <div class="col-12">
+            <input type="password" class="form-control" placeholder="Password" id="password"><span class="e" id="e4"></span>
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" id="ad" placeholder="Full address"><span class="e" id="e5"></span>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="city" placeholder="City"><span class="e" id="e6"></span>
+          </div>
+          
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="postal code" id="ps"><span class="e" id="e7"></span>
+          </div>
+          <div class="col-m12">
+            <select class="form-select">
+              <option selected>Continent</option>
+              <option>Asia</option>
+              <option>South America</option>
+              <option>North America</option>
+              <option>Europe</option>
+              <option>Oceana</option>
+              <option>Africa</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" onclick="sp()" type="checkbox" id="gridCheck">
+              <label style="color: black;" class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modal-sign" onclick="sp()" class="btn btn-success">Sign in</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ 
+
+        <input type="radio" id="radio1" name="rad">
+        <input type="radio" id="radio2" name="rad">
+        <label  id="hamburger" for="radio2"><i class="bi bi-list"></i><i class="bi bi-x"></i></label>
+        <nav class="nav">
+          <ul>
+              <li class="li1"><a class='e' href="cricket.html">Cricket</a></li>
+              <li class="li1"><a class='e' href="football.html">Football</a></li>
+              <li class="li1"><a class='e'href="baseball.html ">Baseball</a></li> 
+              <li class="li1"><a class='e'href="Basketball.html">Basketball</a></li>
+              <li class="li1"><a class='e'href="rugby.html">Rugby</a></li> 
+              <li class="li1"><a class='e'href="Tennis1.html">Tennis</a></li>
+              <li class="li1"><a class='e'href="squash.html">Squash</a></li>
+              <li class="li1"><a class='e'href="badminton.html">Badminton</a></li> 
+              <li class="li1"><a class='e'href="golf.html">Golf</a></li>  
+              <li class="li1"><a class='e' href="shoes.html">Shoe Wear</a></li>   
+          </ul>
+      </nav>
+      <div id="div1">
+          <ul>
+          <li class="li2"><a  class="a1"  href="#">Home</a></li>
+          <li class="li2"><a class="a1"  href="#">About Us</a></li>
+          <li class="li2"><a  class="a1" href="#">Explore</a></li>
+          <hr>   
+          <li class="li3"><a  class="e1"  href="cricket.html">Cricket</a></li>
+          <li class="li3"><a  class="e1"  href="football.html">Football</a></li>
+          <li class="li3"><a  class="e1" href="baseball.html">Baseball</a></li> 
+          <li class="li3"><a class='e1'href="Basketball.html">Basketball</a></li>
+          <li class="li3"><a class='e1'href="rugby.html">Rugby</a></li> 
+          <li class="li3"><a class='e1'href="Tennis1.html">Tennis</a></li>
+          <li class="li3"><a class='e1'href="squash.html">Squash</a></li>
+         <li class="li3"><a class='e1'href="badminton.html">Badminton</a></li> 
+          <li class="li3"><a class='e1'href="golf.html">Golf</a></li>  
+          <li class="li3"><a class='e1' href="shoes.html">Shoe Wear</a></li>  
+          </ul>
+      </div>
+      <div id="div2">
+          <ul>
+          <h1>Sports</h1>
+          <li class="li3"><a  class="e1"  href="cricket.html">Cricket</a></li>
+          <li class="li3"><a  class="e1"  href="football.html">Football</a></li>
+          <li class="li3"><a  class="e1" href="baseball.html">Baseball</a></li> 
+          <li class="li3"><a class='e1'href="Basketball.html">Basketball</a></li>
+          <li class="li3"><a class='e1'href="rugby.html">Rugby</a></li> 
+          <li class="li3"><a class='e1'href="Tennis1.html">Tennis</a></li>
+          <li class="li3"><a class='e1'href="squash.html">Squash</a></li> 
+          <li class="li3"><a class='e1'href="badminton.html">Badminton</a></li> 
+          <li class="li3"><a class='e1'href="golf.html">Golf</a></li> 
+          <li class="li3"><a class='e1' href="shoes.html">Shoe Wear</a></li>   
+          </ul>
+      </div>
+    
+    </header>
+    <script>
+      window.addEventListener('scroll',function(event){
+          var head=document.querySelector('header');
+          var nav=document.querySelector('nav');
+          var a=document.querySelector('a');
+          var logo=document.querySelector('.img1');
+          var win=window.scrollY>0;
+          head.classList.toggle('sticky',win);
+          nav.classList.toggle('nav1',win);
+          logo.classList.toggle('img2',win);
+      });
+      $(document).ready(function(){
+          $('#hamburger').click(function(){
+              var foratt= $('#hamburger').attr('for');
+          if(foratt=='radio2'){
+              $('#hamburger').attr('for','radio1');
+              $(".bi-list").hide();
+              $(".bi-x").show();
+          }
+          else{
+              $('#hamburger').attr('for','radio2'); 
+              $(".bi-list").show();
+              $(".bi-x").hide();
+          }
+          })
+      })
+  </script>
+    <label id="cart"><i class="bi bi-cart4"></i></label>
+  
+
+      <div id="sidemenu">
+        <h1>SPORTS BRANDS</h1>
+        <ol>
+            <a href="Wilson.html"><button><li>WILSON</li></button></a><br>
+            <a href="Mizuno.html"><button><li>MIZUNO </li></button></a><br>
+            <a href="adidas.html"><button><li>ADIDAS</li></button></a><br>
+            
+          
+        </ol>
+    </div>  
+   
+    <!-- cards -->
+    <div id="container" class="container">  
+      <div class="row">
+        <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="wil1.jpg" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>WILSON</h4> 
+                <p>WILSON baseball batsmen glooves.</p>
+                <table>
+                    <tr>  
+                         <td>RS 999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="wil2.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>WILSON</h4> 
+                <p> Wilson Youth A500 11" Baseball Glove! For the
+                     serious young player, this glove features top-grain leather that ....</p>
+                <table>
+                    <tr>  
+                         <td>RS 2,799.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="wil3.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>WILSON</h4> 
+                <p>This limited edition 11.5" A2000 1786 is a 
+                    must-have for ballplayers from the Dominican Republic.
+                     The nation's flag is embedded into ....</p>
+                <table>
+                    <tr>  
+                         <td>RS 3,999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <br> <br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br> 
+   <div class="row">
+    <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="wil4.jpg" alt="Avatar" style="width:100%;height:100%;">
+          </div>
+            <div class="flip-card-back">
+            <h4>WILSON</h4> 
+            <p>Durable wooden baseball bat, Ideal 
+                for beginners thanks to comfortable and lightweight design..</p>
+            <table>
+                <tr>  
+                     <td>RS 29,999.00</td>
+                </tr>
+              
+          </table> 
+           
+            <button id="add" type="submit">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="wil5.jpeg" alt="Avatar" style="width:100%;height:100%;">
+          </div>
+            <div class="flip-card-back">
+            <h4>WILSON</h4> 
+            <p>Demarini D243 Pro Maple Composite bat. It features the 
+                Demarini 243 cut with a multi-piece . ..</p>
+            <table>
+                <tr>  
+                     <td>RS 45,899.00</td>
+                </tr>
+              
+          </table> 
+           
+            <button id="add" type="submit">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="col" class="col-lg-4 col-md-12 col-sm-12">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="wil6.jfif" alt="Avatar" style="width:100%;height:100%;">
+          </div>
+            <div class="flip-card-back">
+            <h4>WILSON</h4> 
+            <p> DeMarini D271 Pro Maple Wood Composite Baseball Bat at the best online prices at eBay! ....</p>
+            <table>
+                <tr>  
+                     <td>RS 33,999.00</td>
+                </tr>
+              
+          </table> 
+           
+            <button id="add" type="submit">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br> <br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br> 
+      <div class="row">
+        <div  class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="miz1.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>MIZUNO</h4> 
+                <p>MIZUNO BASEBALL GLOVES 100% TPU Film • Butyl Bladder • Machine-Stitched
+                   • Size 5 (Official Size)</p>
+                <table>
+                    <tr>  
+                        <td>RS 1,499.00</td>
+                    </tr>
+                  
+              </table> 
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="miz2.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>MIZUNO</h4> 
+                <p> The Mizuno Pro series features the highest quality
+                     leather and raw materials available in the world.
+                    
+                 ...</p>
+                <table>
+                    <tr>  
+                         <td>RS 2,999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="miz3.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>MIZUNO</h4> 
+                <p>by Mizuno. ReadMizuno Pro Series GMP2-700DH 12.75" Baseball Glove product reviews
+                   ...,
+                   </p>
+                <table>
+                    <tr>  
+                         <td>RS 1,999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+         </div>
+        </div>
+       </div>
+ <br> <br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br><br><br> 
+       <div class="row">
+        <br>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="base1.png" alt="Avatar" style="width:100%;height:100%;">
+                  </div>
+                    <div class="flip-card-back">
+                    <h4>MIZUNO-B20-Hot Metal</h4> 
+                    <p> Baseball Bat -3
+                       aluminum alloy with innovative CorTech™.</p><br>
+                    <table>
+                        <tr>  
+                             <td>RS 29,999.00</td>
+                        </tr>
+                      
+                  </table> 
+                   
+                    <button id="add" type="submit">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <br>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="miz4.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>MIZUNO</h4> 
+                <p>Swing with greater confidence, thanks to the Mizuno MZM 271 Natural Maple Elite Baseball
+                     Bat 34".
+                  ..</p>
+                <table>
+                    <tr>  
+                         <td>RS 25,599.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+
+     </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="miz5.jfif" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>MIZUNO</h4> 
+                <p>The Mizuno maple Elite Baseball bat features 
+                    rock hard maple hand selected top quality material. 
+                    New bigger barrel designs</p>
+                <table>
+                    <tr>  
+                         <td>RS 22,999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <br>
+       
+ <br> <br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br><br><br> 
+     <div class="row">
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="adb1.jfif" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4> ADIDAS</h4> 
+              <p>About this item.The all weather Baseball bat have an ergonomic
+                 design....</p>
+              <table>
+                  <tr>  
+                       <td>RS 27,999.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="ADB2.jpg" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4>ADIDAS</h4> 
+              <p>the nation are using the Aero Burner
+                  . This one-piece, aluminum alloy baseball bat was ....</p>
+              <table>
+                  <tr>  
+                       <td>RS 22,999.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="adb4.jpg" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4>ADIDAS</h4> 
+              <p> the EQT X1's barrel might provide a subtle hint at its Damascus Alloy's namesake. Just like the steel ...
+              ...</p>
+              <table>
+                  <tr>  
+                       <td>RS 32,999.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+     </div>
+   </div>
+<br><br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br><br><br> 
+     <div class="row">
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="adb3.jpg" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4>ADIDAS</h4> 
+              <p>There is a reason that some of the top collegiate programs in the nation are using the 2017 Adidas</p><br>
+              <table>
+                  <tr>  
+                       <td>RS 19,399.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="adb5.jpg" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4>ADIDAS</h4> 
+              <p> Adidas baseball bats are being used by some of the top collegiate programs
+                   because of their reliability and proven performance at the plate. The Aero ......
+         .,.</p>
+              <table>
+                  <tr>  
+                       <td>RS 28,399.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="adb6.jpeg" alt="Avatar" style="width:100%;height:100%;">
+            </div>
+              <div class="flip-card-back">
+              <h4>ADIDAS</h4> 
+              <p>he aero burner hybrid f18 aero is an explosive bat!
+                   it has a huge barrel that allows some crazy pop! it is a two piece</p>
+              <table>
+                  <tr>  
+                       <td>RS 29,899.00</td>
+                  </tr>
+                
+            </table> 
+             
+              <button id="add" type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+  
+ </div>
+
+ 
+   <footer>
+    <div class="container">
+        <div  class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6" >
+           <a href="home.html"> <img src="676.jpg" id="b"></a>
+              <p>We stand for something bigger than sneakers. We champion those who are fearlessly driven by their passions. We elevate sport. We do right by people and
+                the planet.
+                Together, we drive
+                meaningful change in
+                communities around the world. 
+                 We Got Now.</p>
+               </div>
+          <div id="footerul"  class="col-lg-2 col-md-4 col-sm-6">
+           <h3>Category</h3>
+           <ul>
+          <a href="football.html"><li>football</li></a>
+          <a href="basketball.html"><li>basketball</li></a>
+          <a href="baseball.html"><li>baseball</li></a>
+          <a href="cricket.html"><li>circket</li></a>
+          <a href="tannis.html"><li>tannis</li></a>
+          <a href="rugby.html"><li>rugby</li></a>
+          <a href="hockey.html"><li>hockey</li></a>
+          <a href="golf.html"><li>glof</li></a>
+          <a href="batminton.html"><li>batminton</li></a>
+          <a href="squash.html"><li>squash</li></a>
+          <a href="shoes.html"><li>shoes</li></a>
+           </ul>
+          </div>
+          <div id="footerul"  class="col-lg-2 col-md-4 col-sm-6">
+           <a href="aboutus.html"> <h3>For helps</h3></a>
+            <ul>
+                <a href="aboutus.html"><li>contact us</li></a>
+                <a href="aboutus.html"><li>more information</li></a>
+                <a href="aboutus.html"><li>comment us</li></a>
+                <a href="aboutus.html"><li>terms and conditions</li></a>
+            </ul>
+          </div>
+          <div id="footerul" class="col-lg-2 col-md-4 col-sm-6">
+          <a href="aboutus.html"><h3>About us</h3></a>  
+            <ul>
+          <a href="aboutus.html"><li>FAQS</li></a>
+          <a href="aboutus.html"><li>return</li></a>
+          <a href="aboutus.html"><li>shipping</li></a>
+          <a href="aboutus.html"><li>our service</li></a>
+          <a href="aboutus.html"><li>order status</li></a>
+          <a href="aboutus.html"><li>payment option</li></a>
+          <a href="aboutus.html"><li>policy</li></a>
+          
+            </ul>
+          </div>
+          <div id="footeri" class="col-lg-2 col-md-4 col-sm-6">
+              <h3>Follow us</h3>
+            
+          <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/accounts/login/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.whatsapp.com/?lang=en"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://twitter.com/LOGIN"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.linkedin.com/login"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.google.com/"><i class="bi bi-google"></i></a>
+          <a href="https://telegram.org/"><i class="bi bi-telegram"></i></a>
+          <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+          
+         </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label a" >Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label a">Comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+           </div>
+        </div>
+      </div>
+ </footer>
+        <div id="r">
+            &copy; Copyright 2021 all reserved of copyright by  A2Z softwarehouse
+        </div>
+        <p id="red">cc</p>  
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="header2.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="homefooter.css">
+    <title>Dunlop</title>
+    <link rel="icon" href="az white1.jpg">
+</head>
+<body>
+    <header class="head">
+        <a href="home.html" class='logo'><img class="azimg" src="az white1.jpg"></a>
+        <a href="home.html" class='logo'><img class="img1" src="676.jpg"></a>
+        <ul>
+            <li class="li"><a href="home.html">Home</a></li>
+            <li class="li"><a href="aboutus.html">About Us</a></li>
+            <li class="li"><a href="exclusive.html">Exclusive</a></li>
+            
+        </ul>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Join
+  </button>
+  
+  <!-- Modal -->
+  <script>
+    function sp(){
+var u1 = document.getElementById("n1").value;
+var u2 = document.getElementById("n2").value; 
+var e = document.getElementById("email").value; 
+var p = document.getElementById("password").value; 
+var ps = document.getElementById("ps").value;
+var c = document.getElementById("city").value;
+var ad = document.getElementById("ad").value;
+var r1 = /^[a-zA-Z]{3,15}$/;
+var r4 = /^[0-9]{6}$/;
+var r2 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*&^%$#@_]).{8,16}$/;
+var r3 = /^[a-zA-Z0-9]+@[a-z]{2,3}$/;
+var ut1 = r1.test(u1)
+var ut2 = r1.test(u2)
+var ct = r1.test(c)
+var adt = r1.test(ad)
+var pst = r4.test(ps)
+var pt = r2.test(e)
+var et = r3.test(p)
+
+if(ut1){
+  document.getElementById("e1").innerHTML="";
+}else{
+  document.getElementById("e1").innerHTML="invail first name"
+}
+if(ut2){
+  document.getElementById("e2").innerHTML="";
+}else{
+  document.getElementById("e2").innerHTML="invail first name"
+}
+if(et){
+  document.getElementById("e3").innerHTML="";
+}else{
+  document.getElementById("e3").innerHTML="invail email"
+}
+if(pt){
+  document.getElementById("e4").innerHTML="";
+}else{
+  document.getElementById("e4").innerHTML="invail password ex:Qa121212@"
+}
+if(adt){
+  document.getElementById("e5").innerHTML="";
+}else{
+  document.getElementById("e5").innerHTML="enter your full address"
+}
+if(ct){
+  document.getElementById("e6").innerHTML="";
+}else{
+  document.getElementById("e6").innerHTML="enter city name"
+}
+if(pst){
+  document.getElementById("e7").innerHTML="";
+}else{
+  document.getElementById("e7").innerHTML="enter your postal code"
+}
+    }
+  </script>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Sign up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="n1" placeholder="First name"><span class="e" id="e1"></span>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="n2" placeholder="Last name"><span class="e" id="e2"></span>
+            </div>
+            <div class="col-12">
+            <input type="email" class="form-control" placeholder="Email" id="email"><span class="e" id="e3"></span>
+            </div>
+            <div class="col-12">
+              <input type="password" class="form-control" placeholder="Password" id="password"><span class="e" id="e4"></span>
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control" id="ad" placeholder="Full address"><span class="e" id="e5"></span>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="city" placeholder="City"><span class="e" id="e6"></span>
+            </div>
+            
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="postal code" id="ps"><span class="e" id="e7"></span>
+            </div>
+            <div class="col-m12">
+              <select class="form-select">
+                <option selected>State</option>
+                <option>Sindh</option>
+                <option>Punjab</option>
+                <option>Balochistan</option>
+                <option>KPK</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" onclick="sp()" type="checkbox" id="gridCheck">
+                <label style="color: black;" class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="sp()" class="btn btn-success">Sign in</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+        <input type="radio" id="radio1" name="rad">
+        <input type="radio" id="radio2" name="rad">
+        <label  id="hamburger" for="radio2"><i class="bi bi-list"></i><i class="bi bi-x"></i></label>
+    
+    <nav class="nav">
+        <ul>
+            <li class="li1"><a class='e' href="cricket.html">Cricket</a></li>
+            <li class="li1"><a class='e' href="football.html">Football</a></li>
+            <li class="li1"><a class='e'href="baseball.html">Baseball</a></li> 
+            <li class="li1"><a class='e'href="Basketball.html">Basketball</a></li>
+            <li class="li1"><a class='e'href="rugby.html">Rugby</a></li> 
+            <li class="li1"><a class='e'href="tannis.html">Tennis</a></li>
+            <li class="li1"><a class='e'href="squash.html">Squash</a></li>
+            <li class="li1"><a class='e'href="batminton.html">Batminton</a></li> 
+            <li class="li1"><a class='e'href="golf.html">Golf</a></li>
+            <li class="li1"><a class='e'href="shoes.html">Shoes</a></li>    
+        </ul>
+    </nav>
+    <div id="div1">
+        <ul>
+        <li class="li2"><a  class="a1"  href="home.html">Home</a></li>
+        <li class="li2"><a class="a1"  href="aboutus.html">About Us</a></li>
+        <li class="li2"><a  class="a1" href="exclusive.html">exclusive sale</a></li>
+        <hr>   
+        <li class="li3"><a  class="e1"  href="cricket.html">Cricket</a></li>
+        <li class="li3"><a  class="e1"  href="football.html">Football</a></li>
+        <li class="li3"><a  class="e1" href="baseball.html">Baseball</a></li> 
+        <li class="li3"><a class='e1'href="Basketball.html">Basketball</a></li>
+        <li class="li3"><a class='e1'href="rugby.html">Rugby</a></li> 
+        <li class="li3"><a class='e1'href="tannis.html">Tennis</a></li>
+        <li class="li3"><a class='e1'href="squash.html">Squash</a></li>
+       
+        <li class="li3"><a class='e1'href="batminton.html">Batminton</a></li> 
+        <li class="li3"><a class='e1'href="golf.html">Golf</a></li>    
+        <li class="li3"><a class='e1'href="shoes.html">Shoes</a></li> 
+        </ul>
+    </div>
+    <div id="div2">
+        <ul>
+        <h1>Sports</h1>
+        <li class="li3"><a  class="e1"  href="cricket.html">Cricket</a></li>
+        <li class="li3"><a  class="e1"  href="football.html">Football</a></li>
+        <li class="li3"><a  class="e1" href="baseball.html">Baseball</a></li> 
+        <li class="li3"><a class='e1'href="Basketball.html">Basketball</a></li>
+        <li class="li3"><a class='e1'href="rugby.html">Rugby</a></li> 
+        <li class="li3"><a class='e1'href="tannis.html">Tennis</a></li>
+        <li class="li3"><a class='e1'href="squash.html">Squash</a></li>
+       
+        <li class="li3"><a class='e1'href="batminton.html">Batminton</a></li> 
+        <li class="li3"><a class='e1'href="golf.html">Golf</a></li>    
+        <li class="li3"><a class='e1'href="shoes.html">shoes</a></li>  
+        </ul>
+    </div>
+
+</header>
+<script>
+    window.addEventListener('scroll',function(event){
+        var head=document.querySelector('header');
+        var nav=document.querySelector('nav');
+        var a=document.querySelector('a');
+        var logo=document.querySelector('.img1');
+        var win=window.scrollY>0;
+        head.classList.toggle('sticky',win);
+        nav.classList.toggle('nav1',win);
+        logo.classList.toggle('img2',win);
+    });
+    $(document).ready(function(){
+        $('#hamburger').click(function(){
+            var foratt= $('#hamburger').attr('for');
+        if(foratt=='radio2'){
+            $('#hamburger').attr('for','radio1');
+            $(".bi-list").hide();
+            $(".bi-x").show();
+        }
+        else{
+            $('#hamburger').attr('for','radio2'); 
+            $(".bi-list").show();
+            $(".bi-x").hide();
+        }
+        })
+    })
+</script>
+<label id="cart"><i class="bi bi-cart4"></i></label>
+<section>
+    <div id="q11">
+       <img id="spartan" src="dunlogo.jpg">
+       <div id="branding">
+       <h4 id="brand1">DUNLOP</h4>
+       <P id="brandpara">Dunlop Sport is a British sports equipment manufacturing company established
+          in 1910 that focuses on racquet sports, more specifically tennis, squash, padel and badminton. Products by Dunlop Sport
+          include rackets, strings, balls, shuttlecocks, and bags. Sportswear and clothing line,
+            <a href="https://en.wikipedia.org/wiki/Dunlop_Sport#:~:text=Dunlop%20Sport%20is%20a%20British,balls%2C%20shuttlecocks%2C%20and%20bags.
+              &text=In%20the%20past%2C%20Dunlop%20also%20manufactured%20golf%20equipment.">WIKIPEDIA...</a>    <a href="#">info about brand</a> </P>
+     </div>
+    </div>
+    <div id="contain" class="container">  
+        <div class="row">
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="dun1.jfif" alt="Avatar" style="width:100%;height:100%;">
+                  </div>
+                    <div class="flip-card-back">
+                    <h4> DUNLOP</h4> 
+                    <p>Make every shot count with the new Dunlop SX600 Tennis Racquets
+                        . Our new SX racket series with SPIN...</p>
+                    <table>
+                        <tr>  
+                             <td>RS 24,999.00</td>
+                        </tr>
+                      
+                  </table> 
+                   
+                    <button id="add" type="submit">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="dun2.jfif" alt="Avatar" style="width:100%;height:100%;">
+                  </div>
+                    <div class="flip-card-back">
+                    <h4>DUNLOP</h4> 
+                    <p>The entry-level, CX ELITE 260 is perfect for beginner adults or juniors looking for their first, ....</p>
+                    <table>
+                        <tr>  
+                             <td>RS 16,999.00</td>
+                        </tr>
+                      
+                  </table> 
+                   
+                    <button id="add" type="submit">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="dun3.jfif" alt="Avatar" style="width:100%;height:100%;">
+                  </div>
+                    <div class="flip-card-back">
+                    <h4>DUNLOP</h4> 
+                    <p>The Dunlop Nitro Junior 23 Racquet is perfect for players aged between 6 and 9 years old.</p>
+                    <table>
+                        <tr>  
+                             <td>RS 8,999.00</td>
+                        </tr>
+                      
+                  </table> 
+                   
+                    <button id="add" type="submit">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+           </div>
+         </div>
+      <br><br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br><br><br> <br><br><br> 
+      <div class="row">
+        <div id="col" class="col-lg-4 col-md-4 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="b1.jpg" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>DUNLOP</h4> 
+                <p>special edition Balanced with an original full iron with super hiter ...</p>
+                <table>
+                    <tr>  
+                         <td>RS 5,299.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div id="col" class="col-lg-4 col-md-4 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="b2.jpg" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+                <div class="flip-card-back">
+                <h4>DUNLOP</h4> 
+                <p>racket stick<br>Balanced with an original full iron with black istaff ...</p>
+                <table>
+                    <tr>  
+                         <td>RS 4,999.00</td>
+                    </tr>
+                  
+              </table> 
+               
+                <button id="add" type="submit">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+            <br>
+            <div  class="col-lg-4 col-md-4 col-sm-12">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="br3.jpg" alt="Avatar" style="width:100%;height:100%;">
+                  </div>
+                    <div class="flip-card-back">
+                    <h4>DUNLOP</h4> 
+                    <p> 6 yellow shuttercock in box with high quality</p>
+                    <table>
+                        <tr>  
+                            <td>RS 1,999.00</td>
+                        </tr>
+                      
+                  </table> 
+                    <button id="add" type="submit">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          
+         <br><br><br><br><br><br> <br> <br><br>  <br><br><br> <br><br> <br> <br><br><br><br><br><br><br>
+         <div class="row">
+          <div id="col" class="col-lg-4 col-md-4 col-sm-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="sq4.jpg" alt="Avatar" style="width:100%;height:100%;">
+                </div>
+                  <div class="flip-card-back">
+                  <h4>DUNLOP</h4> 
+                  <p>special edition vcoe<br>Balanced with an original full iron with super hiter ...</p>
+                  <table>
+                      <tr>  
+                           <td>RS 5,299.00</td>
+                      </tr>
+                    
+                </table> 
+                 
+                  <button id="add" type="submit">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="col" class="col-lg-4 col-md-4 col-sm-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="sq5.jpg" alt="Avatar" style="width:100%;height:100%;">
+                </div>
+                  <div class="flip-card-back">
+                  <h4>DUNLOP</h4> 
+                  <p>vCore stick<br>Balanced with an original full iron with black istaff ...</p>
+                  <table>
+                      <tr>  
+                           <td>RS 4,999.00</td>
+                      </tr>
+                    
+                </table> 
+                 
+                  <button id="add" type="submit">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="col" class="col-lg-4 col-md-4 col-sm-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="sq6.jpg" alt="Avatar" style="width:100%;height:100%;">
+                </div>
+                  <div class="flip-card-back">
+                  <h4>DUNLOP</h4> 
+                  <p>special edition stick Balanced with an original full iron with super grip and low weight...</p>
+                  <table>
+                      <tr>  
+                           <td>RS 7,999.00</td>
+                      </tr>
+                    
+                </table> 
+                 
+                  <button id="add" type="submit">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6" >
+           <a href="home.html"> <img src="676.jpg" id="b"></a>
+              <p>We stand for something bigger than sneakers. We champion those who are fearlessly driven by their passions. We elevate sport. We do right by people and
+                   the planet.
+                   Together, we drive
+                   meaningful change in
+                   communities around the world. 
+                    We Got Now.
+                  
+              </p>
+               </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+           <h3>Category</h3>
+           <ul>
+          <a href="football.html"><li>football</li></a>
+          <a href="basketball.html"><li>basketball</li></a>
+          <a href="baseball.html"><li>baseball</li></a>
+          <a href="cricket.html"><li>circket</li></a>
+          <a href="tannis.html"><li>tannis</li></a>
+          <a href="rugby.html"><li>rugby</li></a>
+          <a href="hockey.html"><li>hockey</li></a>
+          <a href="golf.html"><li>glof</li></a>
+          <a href="batminton.html"><li>batminton</li></a>
+          <a href="squash.html"><li>squash</li></a>
+          <a href="shoes.html"><li>shoes</li></a>
+           </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+           <a href="aboutus.html"> <h3>For helps</h3></a>
+            <ul>
+                <a href="aboutus.html"><li>contact us</li></a>
+                <a href="aboutus.html"><li>more information</li></a>
+                <a href="aboutus.html"><li>comment us</li></a>
+                <a href="aboutus.html"><li>terms and conditions</li></a>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+          <a href="aboutus.html"><h3>About us</h3></a>  
+            <ul>
+          <a href="aboutus.html"><li>FAQS</li></a>
+          <a href="aboutus.html"><li>return</li></a>
+          <a href="aboutus.html"><li>shipping</li></a>
+          <a href="aboutus.html"><li>our service</li></a>
+          <a href="aboutus.html"><li>order status</li></a>
+          <a href="aboutus.html"><li>payment option</li></a>
+          <a href="aboutus.html"><li>policy</li></a>
+          
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+              <h3>Follow us</h3>
+            
+          <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/accounts/login/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.whatsapp.com/?lang=en"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://twitter.com/LOGIN"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.linkedin.com/login"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.google.com/"><i class="bi bi-google"></i></a>
+          <a href="https://telegram.org/"><i class="bi bi-telegram"></i></a>
+          <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+          
+         </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label a" >Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label a">Comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+           </div>
+        </div>
+      </div>
+ </footer>
+        <div id="r">
+            &copy; Copyright 2021 all reserved of copyright by  A2Z softwarehouse
+        </div>
+        <p id="red">cc</p>
+</body>
+</html>
